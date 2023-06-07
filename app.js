@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const userroutes = require("./routes/userroutes");
 const placeroutes = require("./routes/placeroutes");
 const app = express();
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://airbnbcloneethiopia.netlify.app" }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 app.use(
