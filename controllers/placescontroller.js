@@ -104,7 +104,6 @@ exports.getsingleplacebyid = async (req, res) => {
 exports.searchhplacebyquery = async (req, res) => {
   try {
     const searchquery = req.body.searchquery;
-    console.log(searchquery);
     let places = await Place.find({ $text: { $search: searchquery } });
     res.json({
       data: places,
