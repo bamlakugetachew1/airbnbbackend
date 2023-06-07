@@ -168,8 +168,8 @@ exports.placeorder = async (req, res) => {
         payment_method: "paypal",
       },
       redirect_urls: {
-        return_url: `http://localhost:4000/api/users/success/${name}/${address}/${phone}/${ownerid}/${placeid}/${price}/${checkin}/${checkout}`,
-        cancel_url: "http://localhost:4000/api/users/cancel",
+        return_url: `https://airbnb-jovi.onrender.com/api/users/success/${name}/${address}/${phone}/${ownerid}/${placeid}/${price}/${checkin}/${checkout}`,
+        cancel_url: "https://airbnb-jovi.onrender.com/api/users/cancel",
       },
       transactions: [
         {
@@ -250,7 +250,7 @@ exports.successorder = async (req, res) => {
           });
           await order.save();
 
-          res.redirect("http://localhost:3000/success");
+          res.redirect("https://airbnbcloneethiopia.netlify.app/success");
         }
       }
     );
@@ -261,7 +261,7 @@ exports.successorder = async (req, res) => {
 
 exports.cancelorder = async (req, res) => {
   try {
-    res.redirect("http://localhost:3000/cancel");
+    res.redirect("https://airbnbcloneethiopia.netlify.app/cancel");
   } catch (err) {
     console.log(err);
   }
@@ -312,8 +312,8 @@ exports.paywithchapa = async (req, res) => {
       currency: "ETB",
       phone_number: "0932223057",
       tx_ref: tx_ref,
-      callback_url: `http://localhost:4000/api/users/chapaverify/${name}/${address}/${phone}/${ownerid}/${placeid}/${price}/${checkin}/${checkout}`,
-      return_url: "http://localhost:3000/success",
+      callback_url: `https://airbnb-jovi.onrender.com/api/users/chapaverify/${name}/${address}/${phone}/${ownerid}/${placeid}/${price}/${checkin}/${checkout}`,
+      return_url: "https://airbnbcloneethiopia.netlify.app/success",
     };
     let response = await axios.post(
       "https://api.chapa.co/v1/transaction/initialize",
