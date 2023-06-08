@@ -337,7 +337,7 @@ exports.chapaverrify = async (req, res) => {
     let { name, address, phone, ownerid, placeid, price, checkin, checkout } =
       req.params;
     let response = await axios.get(
-      `https://api.chapa.co/v1/transaction/verify/${req.query.trx_ref}`,
+      `https://api.chapa.co/v1/transaction/verify/${req.query.tx_ref}`,
       {
         headers: {
           Authorization: `Bearer CHASECK_TEST-z353MchAAChZd0XyBhq5rdlloP0w54dN`,
