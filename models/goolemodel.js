@@ -7,6 +7,7 @@ const googleschema = new mongoose.Schema(
     },
     email: {
       type: String,
+      unique: true,
     },
     imageurl: {
       type: String,
