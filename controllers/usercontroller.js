@@ -316,11 +316,12 @@ exports.paywithchapa = async (req, res) => {
     
     let tx_ref = Date.now();
     tx_ref = tx_ref.toString();
+    process.env.TX_REF = tx_ref;
     let paymentbody = {
       amount: price,
       currency: "ETB",
       phone_number: "0932223057",
-      tx_ref: tx_ref,
+      tx_ref: process.env.TX_REF,
       callback_url: "https://airbnb-jovi.onrender.com/api/users/chapaverify",
       return_url: "https://addishomefind.netlify.app/success",
     };
@@ -355,7 +356,7 @@ exports.chapaverrify = async (req, res) => {
           console.log(req.query);
 
    let response = await axios.get(
-      `https://api.chapa.co/v1/transaction/verify/${req.query.trx_ref}`,
+      `https://api.chapa.co/v1/transaction/verify/${process.env.TX_REF}`,
       {
         headers: {
           Authorization: `Bearer CHASECK_TEST-z353MchAAChZd0XyBhq5rdlloP0w54dN`,
