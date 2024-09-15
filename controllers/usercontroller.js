@@ -250,7 +250,7 @@ exports.successorder = async (req, res) => {
           });
           await order.save();
 
-          res.redirect("https://cloneairbnbet.netlify.app/success");
+          res.redirect("https://addishomefind.netlify.app/success");
         }
       }
     );
@@ -261,7 +261,7 @@ exports.successorder = async (req, res) => {
 
 exports.cancelorder = async (req, res) => {
   try {
-    res.redirect("https://cloneairbnbet.netlify.app/cancel");
+    res.redirect("https://addishomefind.netlify.app/cancel");
   } catch (err) {
     console.log(err);
   }
@@ -313,7 +313,7 @@ exports.paywithchapa = async (req, res) => {
       phone_number: "0932223057",
       tx_ref: tx_ref,
       callback_url: `https://airbnb-jovi.onrender.com/api/users/chapaverify/${name}/${address}/${phone}/${ownerid}/${placeid}/${price}/${checkin}/${checkout}`,
-      return_url: "https://cloneairbnbet.netlify.app/success",
+      return_url: "https://addishomefind.netlify.app/success",
     };
     let response = await axios.post(
       "https://api.chapa.co/v1/transaction/initialize",
