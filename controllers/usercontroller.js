@@ -363,6 +363,8 @@ exports.chapaverrify = async (req, res) => {
         },
       }
     );
+        console.log(response.data);
+
     if (response.data.status == "success") {
       const order = new Order({
         name: name,
