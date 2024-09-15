@@ -27,7 +27,7 @@ exports.createusers = async (req, res) => {
     });
   } catch (err) {
     res.json({
-      message: "This email alerady registerd",
+      message: "This email is alerady registerd",
     });
   }
 };
