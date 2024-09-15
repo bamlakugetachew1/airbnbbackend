@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const userroutes = require("./routes/userroutes");
 const placeroutes = require("./routes/placeroutes");
 const app = express();
-app.use(cors({ credentials: true, origin: "https://addishomefind.netlify.app" }));
+app.use(cors({ credentials: true, origin: "https://findplaceone.netlify.app" }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 app.use(
