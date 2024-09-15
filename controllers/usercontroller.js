@@ -312,7 +312,7 @@ exports.paywithchapa = async (req, res) => {
       currency: "ETB",
       phone_number: "0932223057",
       tx_ref: tx_ref,
-      callback_url: `https://airbnb-jovi.onrender.com/api/users/chapaverify/${name}/${address}/${phone}/${ownerid}/${placeid}/${price}/${checkin}/${checkout}`,
+      callback_url: "https://airbnb-jovi.onrender.com/api/users/chapaverify",
       return_url: "https://addishomefind.netlify.app/success",
     };
     let response = await axios.post(
