@@ -303,8 +303,17 @@ exports.paywithstripe = async (req, res) => {
 
 exports.paywithchapa = async (req, res) => {
   try {
-    let { name, address, phone, ownerid, placeid, price, checkin, checkout } =
-      req.body;
+    let { name, address, phone, ownerid, placeid, price, checkin, checkout } = req.body;
+
+    process.env.NAME = name;
+    process.env.ADDRESS = address;
+    process.env.PHONE = phone;
+    process.env.OWNERID = ownerid;
+    process.env.PLACEID = placeid;
+    process.env.PRICE = price;
+    process.env.CHECKIN = checkin;
+    process.env.CHECKOUT = checkout;
+    
     let tx_ref = Date.now();
     tx_ref = tx_ref.toString();
     let paymentbody = {
@@ -334,8 +343,15 @@ exports.paywithchapa = async (req, res) => {
 
 exports.chapaverrify = async (req, res) => {
   try {
-    let { name, address, phone, ownerid, placeid, price, checkin, checkout } =
-      req.params;
+
+       const name = process.env.NAME;
+    const address = process.env.ADDRESS;
+    const phone = process.env.PHONE;
+    const ownerid = process.env.OWNERID;
+    const placeid = process.env.PLACEID;
+    const price = process.env.PRICE;
+    const checkin = process.env.CHECKIN;
+    const checkout = process.env.CHECKOUT;
           console.log(req.query);
 
    let response = await axios.get(
