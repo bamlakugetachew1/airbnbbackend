@@ -328,7 +328,7 @@ exports.paywithchapa = async (req, res) => {
       checkout_url: response.data.data.checkout_url,
     });
   } catch (err) {
-    console.log(err);
+     console.log(err.response ? err.response.data : err);
   }
 };
 
