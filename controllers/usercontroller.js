@@ -250,7 +250,7 @@ exports.successorder = async (req, res) => {
           });
           await order.save();
 
-          res.redirect("https://findplaceone.netlify.app/success");
+          res.redirect("https://airbnbfrontend-omega.vercel.app/success");
         }
       }
     );
@@ -261,7 +261,7 @@ exports.successorder = async (req, res) => {
 
 exports.cancelorder = async (req, res) => {
   try {
-    res.redirect("https://findplaceone.netlify.app/cancel");
+    res.redirect("https://airbnbfrontend-omega.vercel.app/cancel");
   } catch (err) {
     console.log(err);
   }
@@ -323,7 +323,7 @@ exports.paywithchapa = async (req, res) => {
       phone_number: "0932223057",
       tx_ref: process.env.TX_REF,
       callback_url: "https://airbnb-jovi.onrender.com/api/users/chapaverify",
-      return_url: "https://findplaceone.netlify.app/success",
+      return_url: "https://airbnbfrontend-omega.vercel.app/success",
     };
     let response = await axios.post(
       "https://api.chapa.co/v1/transaction/initialize",
